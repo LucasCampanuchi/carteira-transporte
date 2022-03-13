@@ -1,4 +1,5 @@
 import { jsPDF } from 'jspdf'
+import { returnType } from '../tools/return_type'
 
 class PDFGenerator {
   async generate (nome, endereco, telefone, curso, image) {
@@ -20,19 +21,19 @@ class PDFGenerator {
 
     // titulo detro do header
     doc.setTextColor(255, 255, 255)
-    doc.setFontSize(12).setFont(undefined, 'w900')
-    doc.text('Carteira de Transporte Intermunicipal', 10, 8)
+    doc.setFontSize(11).setFont(undefined, 'bold')
+    doc.text('Carteira de Transporte Intermunicipal', 8, 8)
 
     // imagem
-    doc.addImage(image, 'JPG', 1, 13, 21, 26)
+    doc.addImage(image, returnType(image), 1, 13, 21, 26, null, 'FAST', 0)
 
     doc.setTextColor(0, 0, 0)
-    doc.setFontSize(7)
+    doc.setFontSize(7).setFont(undefined, 'normal')
     doc.text('Nome', 24, 15)
 
     doc.setTextColor(0, 0, 0)
     doc.setFontSize(7).setFont(undefined, 'bold')
-    doc.text(nome, 24, 17.5)
+    doc.text(nome, 24, 18)
 
     doc.setTextColor(0, 0, 0)
     doc.setFontSize(7).setFont(undefined, 'normal')
@@ -40,7 +41,7 @@ class PDFGenerator {
 
     doc.setTextColor(0, 0, 0)
     doc.setFontSize(7).setFont(undefined, 'bold')
-    doc.text(endereco, 24, 24.5)
+    doc.text(endereco, 24, 25)
 
     doc.setTextColor(0, 0, 0)
     doc.setFontSize(7).setFont(undefined, 'normal')
@@ -48,7 +49,7 @@ class PDFGenerator {
 
     doc.setTextColor(0, 0, 0)
     doc.setFontSize(7).setFont(undefined, 'bold')
-    doc.text(telefone, 24, 31.5)
+    doc.text(telefone, 24, 32)
 
     doc.setTextColor(0, 0, 0)
     doc.setFontSize(7).setFont(undefined, 'normal')
@@ -56,7 +57,7 @@ class PDFGenerator {
 
     doc.setTextColor(0, 0, 0)
     doc.setFontSize(7).setFont(undefined, 'bold')
-    doc.text(curso, 24, 38.5)
+    doc.text(curso, 24, 39)
 
     doc.setDrawColor(0)
     doc.setFillColor(55, 80, 162)
