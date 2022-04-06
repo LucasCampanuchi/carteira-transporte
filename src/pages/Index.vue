@@ -101,12 +101,20 @@ export default defineComponent({
     generate () {
       if (this.name === '') {
         alert('Informe seu nome')
+      } else if (this.name.length > 41) {
+        alert('Limite máximo de 41 caracteres no nome')
       } else if (this.address === '') {
         alert('Informe seu endereço')
+      } else if (this.address.length > 41) {
+        alert('Limite máximo de 41 caracteres no endereço')
       } else if (this.phoneNumber === '') {
         alert('Informe seu telefone')
+      } else if (this.phoneNumber.length > 41) {
+        alert('Limite máximo de 41 caracteres no telefone')
       } else if (this.course === '') {
         alert('Informe seu curso')
+      } else if (this.course.length > 41) {
+        alert('Limite máximo de 41 caracteres no curso')
       } else if (this.base64 === '') {
         alert('Insira uma foto')
       } else {
